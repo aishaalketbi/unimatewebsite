@@ -20,6 +20,8 @@ const OnBoarding = () => {
         show_gender: false,
         gender_identity: 'man',
         gender_interest: 'woman',
+        major_interest: '',
+        ethnicity_interest: '',
         // email:'',
         // email: cookies.Email,
         url:'',
@@ -153,9 +155,11 @@ const OnBoarding = () => {
                                 id="ethnicity"
                                 name="ethnicity"
                                 value={formData.ethnicity}
-                                onChange={(e) => setFormData({...formData, ethnicity: e.target.value})}
+                                // onChange={(e) => setFormData({...formData, ethnicity: e.target.value})}
+                                onChange={handleChange}
                             >
                                 <option value="">Select your ethnicity</option>
+                                <option value="arab">Arab</option>
                                 <option value="asian">Asian</option>
                                 <option value="black">Black or African American</option>
                                 <option value="hispanic">Hispanic or Latino</option>
@@ -174,7 +178,8 @@ const OnBoarding = () => {
                                 name="major"
                                 placeholder="Enter your major"
                                 value={formData.major}
-                                onChange={(e) => setFormData({...formData, major: e.target.value})}
+                                // onChange={(e) => setFormData({...formData, major: e.target.value})}
+                                onChange={handleChange}
                             >
                                 <option value="">Select your major</option>
                                 <option value="arab">Arab Crossroads Studies</option>
@@ -297,6 +302,78 @@ const OnBoarding = () => {
                             <label htmlFor="everyone-gender-interest">Everyone</label>
                         </div>
 
+                        <select
+                            type="text"
+                            id="ethnicity_interest"
+                            name="ethnicity_interest"
+                            placeholder="Pick a ethnicity interest"
+                            value={formData.ethnicity_interest}
+
+
+                            // onChange={(e) => setFormData({...formData, ethnicity: e.target.value})}
+                            onChange={handleChange}
+                        >
+                            <option value="">Pick a ethnicity interest</option>
+                            <option value="everyone">Everyone</option>
+                            <option value="arab">Arab</option>
+                            <option value="asian">Asian</option>
+                            <option value="black">Black or African American</option>
+                            <option value="hispanic">Hispanic or Latino</option>
+                            <option value="white">White</option>
+                            <option value="native">Native American or Alaska Native</option>
+                            <option value="pacific">Native Hawaiian or Other Pacific Islander</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <select
+                            type="text"
+                            id="major_interest"
+                            name="major_interest"
+                            placeholder="Pick a major interest"
+                            value={formData.major_interest}
+                            // onChange={(e) => {
+                            //     const newValue = e.target.value;
+                            //     console.log("Selected Major Interest:", newValue); // Log the selected value
+                            //     setFormData({
+                            //         ...formData,
+                            //         major_interest: newValue,
+                            //     });
+                            onChange={handleChange}
+
+                        >
+                            <option value="">Pick a major interest</option>
+                            <option value="everyone">Everyone</option>
+                            <option value="arab">Arab Crossroads Studies</option>
+                            <option value="artHistory">Art and Art History</option>
+                            <option value="arts">Arts and Humanities Colloquia</option>
+                            <option value="bioengineering">Bioengineering</option>
+                            <option value="biology">Biology</option>
+                            <option value="business">Business, Organizations and Society</option>
+                            <option value="chemsitry">Chemistry</option>
+                            <option value="civil">Civil Engineering</option>
+                            <option value="copmuterEng">Computer Engineering</option>
+                            <option value="compSci">Computer Science</option>
+                            <option value="econ">Economics</option>
+                            <option value="elecEng">Electrical Engineering</option>
+                            <option value="film">Film and New Media</option>
+                            <option value="science">Foundations of Science</option>
+                            <option value="generalEng">General Engineering</option>
+                            <option value="history">History</option>
+                            <option value="interactiveMedia">Interactive Media</option>
+                            <option value="legal">Legal Studies</option>
+                            <option value="literature">Literature and Creative Writing</option>
+                            <option value="maths">Mathematics</option>
+                            <option value="mechanicalEng">Mechanical Engineering</option>
+                            <option value="music">Music</option>
+                            <option value="philosophy">Philosophy</option>
+                            <option value="physics">Physics</option>
+                            <option value="polisci">Political Science</option>
+                            <option value="psych">Psychology</option>
+                            <option value="srpp">Social Research and Public Policy</option>
+                            <option value="theatre">Theatre</option>
+                        </select>
+
+
                         <label htmlFor="about">About me</label>
                         <input
                             id="about"
@@ -329,6 +406,7 @@ const OnBoarding = () => {
                 </form>
 
             </div>
+
         </>
     )
 }
